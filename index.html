@@ -3,35 +3,60 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Note QS</title>
+  <title>Note QS Dashboard</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="navbar">
-    <div class="container">
-      <h1 class="logo">NoteQS</h1>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#">Home</a></li>
-          <li><a href="#features">Features</a></li>
-          <li><a href="#about">About</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
+  <div class="dashboard">
+    <aside class="sidebar">
+      <div class="logo">NoteQS</div>
+      <ul class="sidebar-menu">
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#clients">Clients</a></li>
+        <li><a href="#notes">Session Notes</a></li>
+        <li><a href="#new">+ New</a></li>
+      </ul>
+    </aside>
 
-  <main class="main-content">
-    <div class="card">
-      <h2>Write Your Note</h2>
-      <textarea id="noteInput" placeholder="Type your session note..."></textarea>
-      <button id="generateBtn">Generate Note</button>
-      <div id="result"></div>
-    </div>
-  </main>
+    <main class="main-panel">
+      <header class="dashboard-header">
+        <h1>Dashboard</h1>
+      </header>
+      <section class="stats">
+        <div class="stat-card">
+          <h2>1</h2>
+          <p>This month active clients</p>
+        </div>
+        <div class="stat-card">
+          <h2>0</h2>
+          <p>Notes generated this month</p>
+        </div>
+      </section>
+      <section class="overview">
+        <h3>Overview</h3>
+        <canvas id="overviewChart"></canvas>
+      </section>
 
-  <footer class="footer">
-    <p>&copy; 2025 NoteQS. All rights reserved.</p>
-  </footer>
+      <section id="clients" class="clients-section">
+        <h2>Clients</h2>
+        <button class="new-btn">New Client</button>
+        <table class="clients-table">
+          <thead>
+            <tr><th>Name</th><th>Gender</th><th>View</th><th>Delete</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Jorge Rivero</td><td>Male</td><td><button>👁️</button></td><td><button>🗑️</button></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="notes" class="notes-section">
+        <h2>Session Notes</h2>
+        <button class="new-btn">New Session Note</button>
+        <div class="empty-state">There aren't saved notes</div>
+      </section>
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -1,9 +1,8 @@
-// Asegúrate de que este script se ejecute después de que Chart.js esté cargado.
-// Puedes añadir Chart.js en tu HTML si no lo has hecho:
+// Load and render the chart
 const loadChart = () => {
   const ctx = document.getElementById('overviewChart').getContext('2d');
 
-  const chart = new Chart(ctx, {
+  new Chart(ctx, {
     type: 'bar',
     data: {
       labels: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
@@ -39,5 +38,26 @@ const loadChart = () => {
   });
 };
 
-// Espera a que el DOM esté listo
+// Add a new client row
+function addClient() {
+  const table = document.getElementById('clientList');
+  const row = table.insertRow();
+  row.innerHTML = `
+    <td>New Client</td>
+    <td>Unknown</td>
+    <td><button>👁️</button></td>
+    <td><button onclick="this.parentElement.parentElement.remove()">🗑️</button></td>
+  `;
+}
+
+// Add a new session note
+function addNote() {
+  const list = document.getElementById('notesList');
+  const empty = document.getElementById('notesEmpty');
+  empty.style.display = 'none';
+  const li = document.createElement('li');
+  li.textContent = 'New session note created at ' + new Date().toLocaleString();
+  list.appendChild(li);
+}
+
 document.addEventListener('DOMContentLoaded', loadChart);

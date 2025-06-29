@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Note QS Dashboard</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
   <div class="dashboard">
@@ -32,6 +33,7 @@
           <p>Notes generated this month</p>
         </div>
       </section>
+
       <section class="overview">
         <h3>Overview</h3>
         <canvas id="overviewChart"></canvas>
@@ -39,12 +41,12 @@
 
       <section id="clients" class="clients-section">
         <h2>Clients</h2>
-        <button class="new-btn">New Client</button>
+        <button class="new-btn" onclick="addClient()">New Client</button>
         <table class="clients-table">
           <thead>
             <tr><th>Name</th><th>Gender</th><th>View</th><th>Delete</th></tr>
           </thead>
-          <tbody>
+          <tbody id="clientList">
             <tr><td>Jorge Rivero</td><td>Male</td><td><button>👁️</button></td><td><button>🗑️</button></td></tr>
           </tbody>
         </table>
@@ -52,8 +54,9 @@
 
       <section id="notes" class="notes-section">
         <h2>Session Notes</h2>
-        <button class="new-btn">New Session Note</button>
-        <div class="empty-state">There aren't saved notes</div>
+        <button class="new-btn" onclick="addNote()">New Session Note</button>
+        <div class="empty-state" id="notesEmpty">There aren't saved notes</div>
+        <ul id="notesList"></ul>
       </section>
     </main>
   </div>

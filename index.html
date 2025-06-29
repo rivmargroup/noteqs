@@ -1,19 +1,38 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Note QS</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Note QS</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <header class="navbar">
     <div class="container">
-        <h1>Note QS</h1>
-        <textarea id="inputNote" placeholder="Write your session note here..."></textarea>
-        <button onclick="generateNote()">Generate Note</button>
-        <div id="outputNote"></div>
+      <h1 class="logo">NoteQS</h1>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </nav>
     </div>
-    <script src="script.js"></script>
+  </header>
+
+  <main class="main-content">
+    <div class="card">
+      <h2>Write Your Note</h2>
+      <textarea id="noteInput" placeholder="Type your session note..."></textarea>
+      <button id="generateBtn">Generate Note</button>
+      <div id="result"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 NoteQS. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
